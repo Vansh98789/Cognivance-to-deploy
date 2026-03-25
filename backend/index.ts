@@ -9,8 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({
   origin: [
-    "http://localhost:5173",
-    "https://your-app.vercel.app"  // 👈 replace with your real Vercel URL
+    "https://cognivance-frontend.vercel.app
   ],
   credentials: true,
 }));
