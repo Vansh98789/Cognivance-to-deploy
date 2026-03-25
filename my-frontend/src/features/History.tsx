@@ -109,13 +109,6 @@ export default function History() {
     }
   };
 
-  const handleSkillChange = (value: string) => {
-    setSelectedSkill(value);
-    setRecords([]);
-    setFetched(false);
-    fetchSessions(value);
-  };
-
   const handleSearch = () => {
     if (mode === "other") {
       if (!inputKey.trim()) { setInputError("Enter a public key"); return; }
