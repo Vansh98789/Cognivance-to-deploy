@@ -133,7 +133,7 @@ export default function JobFormCheckbox() {
       console.log("TX confirmed:", txSignature);
 
       // ── Store job details + selected_roles in DB ───────────────────────────
-      await axios.post("http://localhost:3000/jobs", {
+      await axios.post("https://cognivance-backend.vercel.app/jobs", {
         recruiter_pubkey: publicKey.toBase58(),
         company_name:     companyName,
         role_name:        roleName,
