@@ -9,7 +9,7 @@ import idl from "../../../contract/escrow_contract/idl/escrow_contract.json";
 
 const programId = new PublicKey("8KERZnKwKuPYr4JXS6oPXqJHUjLmngniFRB22Q6XZHij");
 const network   = "https://api.devnet.solana.com";
-const API       = "http://localhost:3000";
+const API       = "https://cognivance-backend.vercel.app";
 const CVANCE    = "CVANCE";
 
 type EscrowStatus = "Open" | "InProgress" | "Completed" | "Cancelled";
