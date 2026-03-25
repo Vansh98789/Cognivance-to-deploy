@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({
   origin: [
-    "https://cognivance-frontend.vercel.app
+    "https://cognivance-frontend.vercel.app"
   ],
   credentials: true,
 }));
