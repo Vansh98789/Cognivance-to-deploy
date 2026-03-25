@@ -3,10 +3,17 @@ import pool from "./db";
 import dotenv from "dotenv";
 import cors from "cors";
 
-const app = express();
 dotenv.config();
+
+const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://your-app.vercel.app"  // 👈 replace with your real Vercel URL
+  ],
+  credentials: true,
+}));
 
 app.get("/", (req, res) => { res.json({ msg: "hi" }); });
 
@@ -17,9 +24,7 @@ app.post("/jobs", async (req, res) => {
     if (!recruiter_pubkey || !company_name || !role_name || !amount) {
       return res.status(400).json({ error: "Missing required fields" });
     }
-    // Ensure selected_roles is a proper array
     const rolesArray = Array.isArray(selected_roles) ? selected_roles : [];
-
     const result = await pool.query(
       `INSERT INTO jobs (recruiter_pubkey, company_name, role_name, job_description, amount, tx_signature, selected_roles)
        VALUES ($1, $2, $3, $4, $5, $6, $7::text[]) RETURNING *`,
@@ -63,4 +68,5 @@ app.get("/jobs/:id", async (req, res) => {
   }
 });
 
-app.listen(3000, () => { console.log("Server running on port 3000"); });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => { console.log(`Server running on port ${PORT}`); });
