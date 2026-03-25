@@ -1,0 +1,11 @@
+{
+  "name": "Backend Developer — Silver",
+  "symbol": "CVANCE",
+  "description": "Scored 7-8 in Cognivance Backend Developer Interview",
+  "image": "https://gateway.pinata.cloud/ipfs/bafybeidia7ehjq62fctcoiruh5ngboeoxtqju33ljndix5qozplotxv3ce/backend-silver.png",
+  "attributes": [
+    { "trait_type": "Skill", "value": "Backend Developer" },
+    { "trait_type": "Tier", "value": "Silver" },
+    { "trait_type": "Score Range", "value": "7-8" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Frontend Developer — Gold",
+  "symbol": "CVANCE",
+  "description": "Scored 9-10 in Cognivance Frontend Developer Interview",
+  "image": "https://gateway.pinata.cloud/ipfs/bafybeidia7ehjq62fctcoiruh5ngboeoxtqju33ljndix5qozplotxv3ce/frontend-gold.png",
+  "attributes": [
+    { "trait_type": "Skill", "value": "Frontend Developer" },
+    { "trait_type": "Tier", "value": "Gold" },
+    { "trait_type": "Score Range", "value": "9-10" }
+  ]
+}

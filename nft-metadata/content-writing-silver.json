@@ -1,0 +1,11 @@
+{
+  "name": "Content Writing — Silver",
+  "symbol": "CVANCE",
+  "description": "Scored 7-8 in Cognivance Content Writing Interview",
+  "image": "https://gateway.pinata.cloud/ipfs/bafybeidia7ehjq62fctcoiruh5ngboeoxtqju33ljndix5qozplotxv3ce/content-writing-silver.png",
+  "attributes": [
+    { "trait_type": "Skill", "value": "Content Writing" },
+    { "trait_type": "Tier", "value": "Silver" },
+    { "trait_type": "Score Range", "value": "7-8" }
+  ]
+}

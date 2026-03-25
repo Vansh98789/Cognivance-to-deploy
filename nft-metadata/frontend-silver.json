@@ -1,0 +1,11 @@
+{
+  "name": "Frontend Developer — Silver",
+  "symbol": "CVANCE",
+  "description": "Scored 7-8 in Cognivance Frontend Developer Interview",
+  "image": "https://gateway.pinata.cloud/ipfs/bafybeidia7ehjq62fctcoiruh5ngboeoxtqju33ljndix5qozplotxv3ce/frontend-silver.png",
+  "attributes": [
+    { "trait_type": "Skill", "value": "Frontend Developer" },
+    { "trait_type": "Tier", "value": "Silver" },
+    { "trait_type": "Score Range", "value": "7-8" }
+  ]
+}

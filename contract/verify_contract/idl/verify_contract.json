@@ -1,0 +1,121 @@
+{
+  "address": "BXttSfoCqPxcFziWpzd4jqy8LSmj8axcyBcgfNcBxLPp",
+  "metadata": {
+    "name": "verify_contract",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "init_session",
+      "discriminator": [
+        121,
+        206,
+        80,
+        106,
+        231,
+        194,
+        225,
+        248
+      ],
+      "accounts": [
+        {
+          "name": "interview_pda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  101,
+                  114,
+                  105,
+                  102,
+                  121
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "student"
+              },
+              {
+                "kind": "arg",
+                "path": "session_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "student",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "session_id",
+          "type": "string"
+        },
+        {
+          "name": "subject",
+          "type": "string"
+        },
+        {
+          "name": "score",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "InterviewSession",
+      "discriminator": [
+        0,
+        142,
+        65,
+        218,
+        111,
+        130,
+        58,
+        39
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "InterviewSession",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "student",
+            "type": "pubkey"
+          },
+          {
+            "name": "session_id",
+            "type": "string"
+          },
+          {
+            "name": "subject",
+            "type": "string"
+          },
+          {
+            "name": "score",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}

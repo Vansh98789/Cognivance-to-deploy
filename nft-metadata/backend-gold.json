@@ -1,0 +1,11 @@
+{
+  "name": "Backend Developer — Gold",
+  "symbol": "CVANCE",
+  "description": "Scored 9-10 in Cognivance Backend Developer Interview",
+  "image": "https://gateway.pinata.cloud/ipfs/bafybeidia7ehjq62fctcoiruh5ngboeoxtqju33ljndix5qozplotxv3ce/backend-gold.png",
+  "attributes": [
+    { "trait_type": "Skill", "value": "Backend Developer" },
+    { "trait_type": "Tier", "value": "Gold" },
+    { "trait_type": "Score Range", "value": "9-10" }
+  ]
+}

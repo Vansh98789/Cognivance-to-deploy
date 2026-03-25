@@ -1,0 +1,333 @@
+{
+  "address": "8KERZnKwKuPYr4JXS6oPXqJHUjLmngniFRB22Q6XZHij",
+  "metadata": {
+    "name": "escrow_contract",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "accept_job",
+      "discriminator": [
+        43,
+        201,
+        124,
+        1,
+        19,
+        189,
+        96,
+        10
+      ],
+      "accounts": [
+        {
+          "name": "escrow_pda",
+          "writable": true
+        },
+        {
+          "name": "candidate",
+          "writable": true,
+          "signer": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "can_release",
+      "discriminator": [
+        126,
+        225,
+        213,
+        238,
+        107,
+        233,
+        169,
+        39
+      ],
+      "accounts": [
+        {
+          "name": "escrow_pda",
+          "writable": true
+        },
+        {
+          "name": "recruiter",
+          "signer": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "cancelled",
+      "discriminator": [
+        112,
+        114,
+        77,
+        217,
+        132,
+        226,
+        69,
+        75
+      ],
+      "accounts": [
+        {
+          "name": "escrow_pda",
+          "writable": true
+        },
+        {
+          "name": "recruiter",
+          "writable": true,
+          "signer": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "init_escrow",
+      "discriminator": [
+        70,
+        46,
+        40,
+        23,
+        6,
+        11,
+        81,
+        139
+      ],
+      "accounts": [
+        {
+          "name": "recruiter_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  99,
+                  114,
+                  117,
+                  105,
+                  116,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "recruiter"
+              }
+            ]
+          }
+        },
+        {
+          "name": "escrow_pda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "recruiter"
+              },
+              {
+                "kind": "account",
+                "path": "recruiter_state.job_count",
+                "account": "RecruiterState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "recruiter",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "release",
+      "discriminator": [
+        253,
+        249,
+        15,
+        206,
+        28,
+        127,
+        193,
+        241
+      ],
+      "accounts": [
+        {
+          "name": "escrow_pda",
+          "writable": true
+        },
+        {
+          "name": "candidate",
+          "writable": true,
+          "signer": true
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "EscrowPda",
+      "discriminator": [
+        168,
+        217,
+        30,
+        14,
+        248,
+        197,
+        118,
+        128
+      ]
+    },
+    {
+      "name": "RecruiterState",
+      "discriminator": [
+        181,
+        243,
+        39,
+        185,
+        65,
+        11,
+        85,
+        170
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "ClosedError",
+      "msg": "Not open for further registration"
+    },
+    {
+      "code": 6001,
+      "name": "NotAuthenticate",
+      "msg": "You are not the recruiter"
+    },
+    {
+      "code": 6002,
+      "name": "NoCandidateYet",
+      "msg": "Candidate must be set first"
+    },
+    {
+      "code": 6003,
+      "name": "NotApproved",
+      "msg": "Recruiter has not approved release"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidCandidate",
+      "msg": "Invalid candidate"
+    }
+  ],
+  "types": [
+    {
+      "name": "EscrowPda",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "recruiter",
+            "type": "pubkey"
+          },
+          {
+            "name": "candidate",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "EscrowStatus"
+              }
+            }
+          },
+          {
+            "name": "job_id",
+            "type": "u64"
+          },
+          {
+            "name": "can_open",
+            "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EscrowStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Open"
+          },
+          {
+            "name": "InProgress"
+          },
+          {
+            "name": "Completed"
+          },
+          {
+            "name": "Cancelled"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RecruiterState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "recuiter",
+            "type": "pubkey"
+          },
+          {
+            "name": "job_count",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Web3 Developer — Silver",
+  "symbol": "CVANCE",
+  "description": "Scored 7-8 in Cognivance Web3 Developer Interview",
+  "image": "https://gateway.pinata.cloud/ipfs/bafybeidia7ehjq62fctcoiruh5ngboeoxtqju33ljndix5qozplotxv3ce/web3-silver.png",
+  "attributes": [
+    { "trait_type": "Skill", "value": "Web3 Developer" },
+    { "trait_type": "Tier", "value": "Silver" },
+    { "trait_type": "Score Range", "value": "7-8" }
+  ]
+}

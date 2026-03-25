@@ -1,0 +1,11 @@
+{
+  "name": "Python Developer — Gold",
+  "symbol": "CVANCE",
+  "description": "Scored 9-10 in Cognivance Python Developer Interview",
+  "image": "https://gateway.pinata.cloud/ipfs/bafybeidia7ehjq62fctcoiruh5ngboeoxtqju33ljndix5qozplotxv3ce/python-gold.png",
+  "attributes": [
+    { "trait_type": "Skill", "value": "Python Developer" },
+    { "trait_type": "Tier", "value": "Gold" },
+    { "trait_type": "Score Range", "value": "9-10" }
+  ]
+}
