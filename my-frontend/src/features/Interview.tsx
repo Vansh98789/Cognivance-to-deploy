@@ -140,7 +140,7 @@ export default function Interview() {
     setMintTx("");
 
     const user_id = publicKey.toBase58();
-    const url = `https://cognivance.onrender.com/skill_score/${user_id}/${session_id}`;
+    const url = `https://cognivance-production.up.railway.app/skill_score/${user_id}/${session_id}`;
     let data: SkillScore | null = null;
 
     try {
