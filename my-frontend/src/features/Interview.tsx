@@ -303,7 +303,7 @@ export default function Interview() {
             <div className="flex-1 rounded-lg overflow-hidden border border-white/10 bg-white/5 relative">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent" />
               <iframe
-                src={`https://cognivance.onrender.com?user_id=${publicKey?.toBase58()}&session_id=${session_id}`}
+                src={`https://cognivance-production.up.railway.app?user_id=${publicKey?.toBase58()}&session_id=${session_id}`}
                 className="w-full h-full min-h-[70vh]"
                 allow="microphone; camera"
                 title="Cognivance Interview"
